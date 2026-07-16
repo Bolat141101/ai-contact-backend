@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Состояние и метрики Developer Landing API.">
+    <title>Состояние API — Bolat.dev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/monitoring.css') }}">
+    <script src="{{ url_for('static', filename='js/monitoring.js') }}" defer></script>
+  </head>
+  <body class="monitoring-body">
+    <header class="monitoring-header">
+      <div class="monitor-container monitoring-nav">
+        <a class="brand" href="{{ url_for('web.index') }}">
+          <span class="brand-mark" aria-hidden="true">B</span>
+          <span>Bolat<span class="muted">.dev</span></span>
+        </a>
+        <a class="back-link" href="{{ url_for('web.index') }}">← На сайт</a>
+      </div>
+    </header>
+
+    <main class="monitor-container monitoring-main">
+      <div class="monitor-title">
+        <p class="section-kicker">Служебная страница</p>
+        <h1>Состояние API</h1>
+        <p>Простая проверка доступности сервиса и статистики обращений.</p>
+      </div>
+
+      <section class="simple-panel" aria-labelledby="health-title">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-label">GET /api/health</p>
+            <h2 id="health-title">Сервис</h2>
+          </div>
+          <div class="health-badge" id="health-badge"><i></i><span>Проверяем</span></div>
+        </div>
+        <div class="health-grid">
+          <div><span>База данных</span><strong id="health-database">—</strong></div>
+          <div><span>AI</span><strong id="health-ai">—</strong></div>
+          <div><span>Email</span><strong id="health-email">—</strong></div>
+        </div>
+      </section>
+
+      <section class="simple-panel" aria-labelledby="metrics-title">
+        <div class="panel-heading metrics-heading">
+          <div>
+            <p class="panel-label">GET /api/metrics</p>
+            <h2 id="metrics-title">Обращения</h2>
+          </div>
+          <form class="key-form" id="metrics-form">
+            <label class="visually-hidden" for="metrics-key">API-ключ метрик</label>
+            <input id="metrics-key" type="password" autocomplete="off" placeholder="X-API-Key" required>
+            <button type="submit">Показать</button>
+          </form>
+        </div>
+
+        <div class="metrics-empty" id="metrics-empty">Введите ключ, чтобы загрузить статистику.</div>
+        <div class="metrics-content" id="metrics-content">
+          <div class="metrics-grid">
+            <div><span>Всего</span><strong id="metric-total">0</strong></div>
+            <div><span>За 24 часа</span><strong id="metric-recent">0</strong></div>
+            <div><span>AI fallback</span><strong id="metric-fallbacks">0</strong></div>
+            <div><span>Ошибки email</span><strong id="metric-email-errors">0</strong></div>
+          </div>
+          <div class="category-block">
+            <h3>Категории запросов</h3>
+            <div id="category-list" class="category-list"></div>
+          </div>
+        </div>
+        <p class="monitor-error" id="metrics-error" role="alert"></p>
+      </section>
+    </main>
+  </body>
+</html>
+

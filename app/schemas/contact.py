@@ -31,8 +31,16 @@ class ContactCreateSchema(Schema):
             raise ValidationError("Phone number must contain 7 to 15 digits.")
 
 
+class AIContactResponseSchema(Schema):
+    category = fields.String(required=True)
+    sentiment = fields.String(required=True)
+    priority = fields.String(required=True)
+    reply = fields.String(required=True)
+
+
 class ContactResponseSchema(Schema):
     id = fields.Integer(required=True)
     status = fields.String(required=True)
     message = fields.String(required=True)
     ai_processed = fields.Boolean(required=True)
+    ai = fields.Nested(AIContactResponseSchema, required=True)

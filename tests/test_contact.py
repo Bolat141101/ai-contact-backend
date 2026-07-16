@@ -18,6 +18,14 @@ def test_create_contact_with_ai_fallback(client, app):
         "status": "accepted",
         "message": "Обращение принято",
         "ai_processed": False,
+        "ai": {
+            "category": "other",
+            "sentiment": "neutral",
+            "priority": "normal",
+            "reply": (
+                "Спасибо за обращение. Я получил ваше сообщение и свяжусь с вами в ближайшее время."
+            ),
+        },
     }
     assert response.headers["X-Request-ID"]
 

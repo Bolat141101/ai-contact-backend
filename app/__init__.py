@@ -9,6 +9,7 @@ from app.errors.handlers import register_error_handlers
 from app.extensions import api, cors, db, limiter, migrate
 from app.logging_config import configure_logging
 from app.middleware.request_context import configure_request_context
+from app.web import blueprint as web_blueprint
 
 
 def create_app(config_object: type[Config] = Config) -> Flask:
@@ -39,6 +40,7 @@ def create_app(config_object: type[Config] = Config) -> Flask:
     api.register_blueprint(health_blueprint)
     api.register_blueprint(contact_blueprint)
     api.register_blueprint(metrics_blueprint)
+    app.register_blueprint(web_blueprint)
     register_error_handlers(app)
 
     return app

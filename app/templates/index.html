@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Backend-разработка на Python и Flask: API, интеграции и надёжные сервисы."
+    >
+    <title>Bolat — Backend Developer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="На главную">
+          <span class="brand-mark" aria-hidden="true">B</span>
+          <span>Bolat<span class="muted">.dev</span></span>
+        </a>
+
+        <nav class="main-nav" aria-label="Основная навигация">
+          <a href="#about">Обо мне</a>
+          <a href="#approach">Подход</a>
+          <a href="{{ url_for('web.monitoring') }}">Статус API</a>
+          <a class="nav-cta" href="#contact">Обсудить проект</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="status-dot" aria-hidden="true"></span>
+              Открыт к новым проектам
+            </div>
+            <h1>Разрабатываю backend, который <span>не подводит.</span></h1>
+            <p class="hero-lead">
+              Создаю понятные API, подключаю внешние сервисы и превращаю бизнес-логику
+              в надёжные приложения на Python и Flask.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#contact">Обсудить задачу</a>
+              <a class="button button-ghost" href="https://github.com/Bolat141101" target="_blank" rel="noreferrer">
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <ul class="hero-tags" aria-label="Основные технологии">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>REST API</li>
+              <li>AI integrations</li>
+            </ul>
+          </div>
+
+          <div class="system-card" aria-label="Пример процесса обработки запроса">
+            <div class="system-card-header">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span>contact_service.py</span>
+              <span class="system-state"><i></i> online</span>
+            </div>
+            <div class="system-content">
+              <p class="code-line"><span class="line-number">01</span><span class="code-keyword">async</span> process_request(data):</p>
+              <div class="flow-list">
+                <div class="flow-item is-complete">
+                  <span class="flow-icon">✓</span>
+                  <div><strong>Validation</strong><small>Данные проверены</small></div>
+                  <span class="flow-time">12 ms</span>
+                </div>
+                <div class="flow-item is-complete">
+                  <span class="flow-icon">✓</span>
+                  <div><strong>AI analysis</strong><small>Запрос классифицирован</small></div>
+                  <span class="flow-time">486 ms</span>
+                </div>
+                <div class="flow-item is-complete">
+                  <span class="flow-icon">✓</span>
+                  <div><strong>Notification</strong><small>Ответ сформирован</small></div>
+                  <span class="flow-time">94 ms</span>
+                </div>
+              </div>
+              <div class="response-row">
+                <span>201 CREATED</span>
+                <code>{ "status": "accepted" }</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">Что я делаю</p>
+            <h2>От идеи до работающего сервиса</h2>
+            <p>Фокусируюсь на backend-задачах, где особенно важны структура, безопасность и предсказуемость.</p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card featured">
+              <span class="card-number">01</span>
+              <div class="service-symbol" aria-hidden="true">{ }</div>
+              <h3>Проектирование API</h3>
+              <p>REST-интерфейсы с понятными контрактами, валидацией и корректными HTTP-статусами.</p>
+              <ul><li>OpenAPI</li><li>Marshmallow</li><li>Rate limiting</li></ul>
+            </article>
+            <article class="service-card">
+              <span class="card-number">02</span>
+              <div class="service-symbol" aria-hidden="true">AI</div>
+              <h3>Умные интеграции</h3>
+              <p>AI, email и сторонние API с таймаутами, логированием и безопасным fallback.</p>
+              <ul><li>OpenAI</li><li>SMTP</li><li>Structured outputs</li></ul>
+            </article>
+            <article class="service-card">
+              <span class="card-number">03</span>
+              <div class="service-symbol" aria-hidden="true">DB</div>
+              <h3>Данные и надёжность</h3>
+              <p>Продуманное хранение данных, миграции, тесты и наблюдаемость приложения.</p>
+              <ul><li>SQLAlchemy</li><li>Pytest</li><li>Docker</li></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section approach-section" id="approach">
+        <div class="container approach-grid">
+          <div class="section-heading align-left">
+            <p class="section-kicker">Как строится работа</p>
+            <h2>Прозрачно на каждом этапе</h2>
+            <p>Сначала определяем результат, затем двигаемся короткими проверяемыми итерациями.</p>
+          </div>
+          <ol class="steps-list">
+            <li><span>01</span><div><h3>Разбираем задачу</h3><p>Фиксируем сценарии, ограничения и критерии готовности.</p></div></li>
+            <li><span>02</span><div><h3>Проектируем решение</h3><p>Определяем API-контракты, слои и поведение при ошибках.</p></div></li>
+            <li><span>03</span><div><h3>Собираем и проверяем</h3><p>Пишем код, тестируем критические сценарии и готовим запуск.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container contact-shell">
+          <div class="contact-copy">
+            <p class="section-kicker">Связаться</p>
+            <h2>Есть задача?<br><span>Давайте обсудим.</span></h2>
+            <p>Расскажите коротко о проекте. Система проанализирует запрос, а я вернусь с ответом.</p>
+            <div class="contact-note">
+              <span aria-hidden="true">↳</span>
+              <p><strong>Что произойдёт после отправки?</strong><br>Обращение будет сохранено, классифицировано AI и отправлено на почту.</p>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Имя</label>
+                <input id="name" name="name" type="text" minlength="2" maxlength="100" autocomplete="name" placeholder="Как к вам обращаться?" required>
+                <span class="field-error" id="name-error"></span>
+              </div>
+              <div class="field">
+                <label for="phone">Телефон</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 777 123-45-67" required>
+                <span class="field-error" id="phone-error"></span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required>
+              <span class="field-error" id="email-error"></span>
+            </div>
+            <div class="field">
+              <label for="comment">О проекте</label>
+              <textarea id="comment" name="comment" minlength="10" maxlength="3000" rows="5" placeholder="Что нужно разработать и какой результат вы ожидаете?" required></textarea>
+              <span class="field-error" id="comment-error"></span>
+            </div>
+            <button class="button button-primary submit-button" type="submit">
+              <span class="button-label">Отправить обращение</span>
+              <span class="button-loading" aria-hidden="true">Отправляем…</span>
+              <span aria-hidden="true" class="button-arrow">→</span>
+            </button>
+            <p class="form-hint">Отправляя форму, вы соглашаетесь на обработку указанных данных.</p>
+            <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+            <div class="ai-response" id="ai-response" aria-live="polite">
+              <div class="ai-response-label"><span aria-hidden="true">AI</span> Ответ ассистента</div>
+              <p id="ai-reply"></p>
+              <div class="ai-meta" id="ai-meta"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">B</span><span>Bolat<span class="muted">.dev</span></span></a>
+        <p>Backend с вниманием к деталям.</p>
+        <p>© <span id="current-year"></span> Bolat</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -43,6 +43,12 @@ class ContactService:
             "status": "accepted",
             "message": "Обращение принято",
             "ai_processed": contact.ai_processed,
+            "ai": {
+                "category": contact.category,
+                "sentiment": contact.sentiment,
+                "priority": contact.priority,
+                "reply": contact.ai_reply,
+            },
         }
 
     @staticmethod
