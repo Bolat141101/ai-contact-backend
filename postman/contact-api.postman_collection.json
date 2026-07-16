@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "Developer Landing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key": "base_url", "value": "http://127.0.0.1:5000"},
+    {"key": "metrics_api_key", "value": "replace-me"}
+  ],
+  "item": [
+    {
+      "name": "Create contact",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Иван Петров\",\n  \"phone\": \"+7 (777) 123-45-67\",\n  \"email\": \"ivan@example.com\",\n  \"comment\": \"Хочу обсудить разработку веб-сервиса.\"\n}"
+        },
+        "url": "{{base_url}}/api/contact"
+      }
+    },
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/health"
+      }
+    },
+    {
+      "name": "Metrics",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "X-API-Key", "value": "{{metrics_api_key}}"}],
+        "url": "{{base_url}}/api/metrics"
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,18 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: sqlite:////app/data/contacts.db
+      LOG_FILE: /app/logs/app.log
+    volumes:
+      - api_data:/app/data
+      - api_logs:/app/logs
+
+volumes:
+  api_data:
+  api_logs:
+
