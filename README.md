@@ -1,5 +1,12 @@
 # Developer Landing API
 
+## Ссылки
+
+- GitHub: https://github.com/Bolat141101/ai-contact-backend
+- Live application: будет добавлена после production-деплоя
+- Swagger: `/docs`
+- Health check: `/api/health`
+
 Backend-сервис формы обратной связи для лендинга разработчика. Сервис валидирует и
 сохраняет обращения, анализирует их с помощью OpenAI, отправляет два email-уведомления,
 ограничивает частоту запросов и предоставляет защищённую агрегированную статистику.
@@ -69,8 +76,8 @@ HTTP → validation → rate limit → ContactService → repository
 Требуется Python 3.13+.
 
 ```bash
-git clone <repository-url>
-cd internet_labratory
+git clone https://github.com/Bolat141101/ai-contact-backend.git
+cd ai-contact-backend
 python3.13 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements-dev.txt
